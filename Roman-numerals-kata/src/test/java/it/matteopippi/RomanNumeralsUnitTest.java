@@ -103,6 +103,7 @@ public class RomanNumeralsUnitTest {
             Queue<Integer> queue = conversionMap.keySet().stream().sorted(Comparator.reverseOrder()).collect(Collectors.toCollection(LinkedList::new));
             while (number > 0) {
                 Integer biggestNumber = queue.poll();
+                assert biggestNumber != null;
                 double quotient = number.doubleValue() / biggestNumber.doubleValue();
                 if(quotient >= 1) {
                     while (quotient >= 1) {
